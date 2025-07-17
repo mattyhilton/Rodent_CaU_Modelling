@@ -25,7 +25,7 @@ cd ..
 
 set(groot,'defaultFigureVisible','off'); 
 
-for i = 2:numel(options.obsNames)
+for i = 1:numel(options.obsNames)
     for j = 1:numel(options.percNames)
         
         filename = "Fitted_" + options.percNames{j} + options.obsNames{i} + ".pdf";
