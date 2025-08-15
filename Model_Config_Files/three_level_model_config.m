@@ -2,9 +2,8 @@ function c = three_level_model_config
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ADAPTED BY MATTY HILTON
 %
-% Changed sd of kappa and mu0 at the third level to allow it to vary. 
+% Only allowed omegas to vary. 
 %
-% Changes made in line with the prior settings used in Cole et al. (2020). 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Contains the configuration for the enhanced Hierarchical Gaussian Filter (eHGF)
 % for binary inputs in the absence of perceptual uncertainty.
@@ -127,10 +126,10 @@ c.irregular_intervals = false;
 % and the second implies neutrality between outcomes when it
 % is centered at 0.
 c.mu_0mu = [NaN, 0, 1];
-c.mu_0sa = [NaN, 0, 1];
+c.mu_0sa = [NaN, 0, 0];
 
 c.logsa_0mu = [NaN,   log(0.1), log(1)];
-c.logsa_0sa = [NaN,          0,      1];
+c.logsa_0sa = [NaN,          0,      0];
 
 % Rhos
 % Format: row vector of length n_levels.
@@ -146,7 +145,7 @@ c.rhosa = [NaN, 0, 0];
 % observation model does not use mu_i+1 (kappa then determines the
 % scaling of x_i+1).
 c.logkamu = [log(1), log(1)];
-c.logkasa = [     0,      1];
+c.logkasa = [     0,      0];
 
 % Omegas
 % Format: row vector of length n_levels.

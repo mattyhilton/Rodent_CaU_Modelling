@@ -5,7 +5,6 @@ function c =   two_level_model_config
 %
 % Removed the third level.
 %
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Contains the configuration for the enhanced Hierarchical Gaussian Filter (eHGF)
 % for binary inputs in the absence of perceptual uncertainty.
