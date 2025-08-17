@@ -27,8 +27,12 @@ set(groot,'defaultFigureVisible','off');
 
 cd(fullfile("Graphs", "Fitting"));
 
-for i = 2:numel(options.obsNames)
+for i = 1:numel(options.obsNames)
     for j = 1:numel(options.percNames)
+
+        if options.obsNames{i} == "unitsq_mu3" && (options.percNames{j} == "rw" || options.percnames{j} == "sutton")
+            continue
+        end
         
         filename = "Fitted_" + options.percNames{j} + options.obsNames{i} + ".pdf";
 
@@ -48,10 +52,6 @@ for i = 2:numel(options.obsNames)
         
         sessiondata = data(data.NewRunIndex == h, :);
 
-        if options.obsNames{i} == "unitsq_mu3" && (options.percNames{j} == "rw" || options.percnames{j} == "sutton")
-        continue
-        end
-        
         fits.(options.obsNames{i}).(options.percNames{j})(h) = tapas_fitModel(sessiondata.Choice,...
                                                  sessiondata.Correct_Side,...
                                                  options.percArgs{j},...
@@ -70,7 +70,6 @@ for i = 2:numel(options.obsNames)
         exportgraphics(fig, filename, 'Append', true);
 
         lmes.(options.obsNames{i}).(options.percNames{j})(h, :) = fits.(options.obsNames{i}).(options.percNames{j})(h).optim.LME;
-        disp("Printed Graph")
 
         cd ..
         cd ..
@@ -81,7 +80,6 @@ for i = 2:numel(options.obsNames)
         cd ..
 
         cd(fullfile("Graphs", "Fitting"));
-
 
         end
     end
