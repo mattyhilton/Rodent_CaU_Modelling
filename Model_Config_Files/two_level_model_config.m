@@ -106,7 +106,7 @@ function c =   two_level_model_config
 c = struct;
 
 % Model name
-c.model = 'ehgf_binary';
+c.model = 'tapas_ehgf_binary';
 
 % Number of levels (minimum: 3)
 c.n_levels = 3;

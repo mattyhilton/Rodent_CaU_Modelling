@@ -33,7 +33,7 @@ options.optim.nRandInit = 10;
 [fits, lmes] = model_fitting(data,options);
 
 %% Performing parameter recovery
-[sim,cc_prc,cc_obs] = param_recovery(fits,options,data);
+[sim,recov_params,cc_prc,cc_obs] = param_recovery(data,options);
 
 %% Performing model recovery
 model_recovery(sim,data,options);

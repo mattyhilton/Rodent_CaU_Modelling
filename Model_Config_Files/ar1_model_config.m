@@ -107,7 +107,7 @@ function c = ar1_model_config
 c = struct;
 
 % Model name
-c.model = 'ehgf_ar1_binary';
+c.model = 'tapas_ehgf_ar1_binary';
 
 % Number of levels (minimum: 3)
 c.n_levels = 3;
