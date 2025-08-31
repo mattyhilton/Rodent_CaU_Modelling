@@ -13,7 +13,7 @@ data = readtable(strcat(options.folderlocation, filesep, "Data", filesep, "Pre_S
 %% Obtaining Bayes optimal priors
 priors = obtain_bo_priors(data,options);
 %% Sampling from Bayes optimal priors
-sampling_from_priors(data,options);
+%sampling_from_priors(data,options);
 
 %% Sampling from reduced Bayes optimal priors
 
@@ -21,9 +21,9 @@ two_level_model_config.priorsas = [NaN, 0, 0, NaN, 0, 0, 0, 0, NaN, 4, 0];
 three_level_model_config.priorsas = [NaN, 0, .5, NaN, 0, .5, NaN, 0, 0, .5, 0, NaN, 2, 2];
 ar1_model_config.priorsas = [NaN, 0, .5, NaN, 0, .5, NaN, 0, 0, NaN, 0, .5, NaN, 0, 0, .5, 0, NaN, 2, 2];
 
-options.sampling = 2;
+%options.sampling = 2;
 
-priors_sdhlv = sampling_from_priors(data,options);
+%priors_sdhlv = sampling_from_priors(data,options);
 
 %% Determining number of initialisations
 % num_initialisations(data,options);
