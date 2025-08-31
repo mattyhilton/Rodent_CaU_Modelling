@@ -51,16 +51,7 @@ for i = 1:numel(options.obsNames)
         for h = 1:(data.NewRunIndex(end))
         
         sessiondata = data(data.NewRunIndex == h, :);
-
-        % Before assigning to lmes/fits, check if the field exists:
-        if ~isfield(lmes, options.obsNames{i}) || ...
-             ~isfield(lmes.(options.obsNames{i}), options.percNames{j})
-             % initialize the structure if not present
-             lmes.(options.obsNames{i}).(options.percNames{j}) = [];
-             fits.(options.obsNames{i}).(options.percNames{j}) = [];
-        end
-
-
+       
         fits.(options.obsNames{i}).(options.percNames{j})(h) = tapas_fitModel(sessiondata.Choice,...
                                                  sessiondata.Correct_Side,...
                                                  options.percArgs{j},...
