@@ -22,16 +22,13 @@ end
 lme_array = [];
 x = [];
 
-lme_array = [];
-x = [];
-
 obsCount = numel(options.obsNames);
 percCount = numel(options.percNames);
 lme_array = zeros(1, obsCount * percCount); % Preallocate for efficiency
 x = strings(1, obsCount * percCount); % Preallocate for efficiency
 
 index = 1; % Initialize index for lme_array and x
-for i = 2:obsCount
+for i = 1:obsCount
     for j = 1:percCount
         lme_array(index) = lmes.(options.obsNames{i}).(options.percNames{j});
         x(index) = strcat(options.obsNames{i}, options.percNames{j});

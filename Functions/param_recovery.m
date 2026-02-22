@@ -1,8 +1,9 @@
-function [sim,recovparams,cc_prc,cc_obs] = param_recovery(data,options)
+function [sim,recovparams,cc_prc,cc_obs] = param_recovery(data,options,fits)
 %PARAM_RECOVERY Recovers parameters for all parameters for all models
 arguments (Input)
     data
     options
+    fits
 end
 
 arguments (Output)
@@ -12,12 +13,11 @@ arguments (Output)
     cc_obs
 end
 
-load(fullfile("Saved_Variables", "fitting.mat"));
+%load(fullfile("Saved_Variables", "fitting.mat"));
 
-for i = 1:numel(options.obsNames)
-    for j = 1:numel(options.percNames)
-
-        if options.obsNames{i} == "unitsq_mu3" && (options.percNames{j} == "rw" || options.percNames{j} == "sutton")
+for i = 1
+    for j = 1
+        if options.obsNames{i} == "unitsq_mu3" && (options.percNames{j} == "rw" || options.percNames{j} == "sutton" || options.percNames{j} == "hgf2l")
             continue
         end
         
